@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<style>
+    /* #red {
+            padding:10px 20px;
+            font-size:24px;
+            font-family: cursive;
+            cursor:pointer;
+            
+        } */
+    .button {
+        background: red;
+    }
+
+    #blue {
+        padding-top: 50px 50px;
+        padding: 10px 30px;
+        font-family: cursive;
+        margin: 10px;
+        cursor: pointer;
+        background-color: rgb(33, 33, 220);
+        border-radius: 25px;
+        /* border: none; */
+        border-radius: 2px solid white;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #black {
+        padding: 14px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 30px;
+        cursor: pointer;
+        background-color: black;
+        color: green;
+        font-size: 24px;
+        border-radius: 20px;
+        border: none;
+    }
+
+
+    #green {
+        padding: 24px;
+        margin: 34px;
+        border-radius: 34px;
+        border: none;
+        background-color: black;
+        color: green;
+        font-size: 18px;
+    }
+
+    .clicked {
+        background-color: yellowgreen;
+    }
+</style>
+
+<head>
+    <script>
+        function hiThere() {
+            alert('Hi there!');
+        }
+        //   changeColor();
+        function changeColor() {
+            const change = document.querySelectorAll("button");
+            for (let i = 0; i < change.length; i++) {
+                change[i].addEventListener("click", function (e) {
+                    console.log(e.target);
+                    e.target.style.backgroundColor = "orange";
+                    e.target.style.fontFamily = "cursive";
+                });
+            }
+        }
+        changeColor();
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const joinMe = document.querySelectorAll(".btn");
+            for (let i = 0; i < joinMe.length; i++) {
+                joinMe[i].addEventListener("click", function (e) {
+                    console.log(e.target);
+                    e.target.style.backgroundColor = "white"
+                    e.target.style.color = "black";
+
+                });
+            }
+        });
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <button type="button" onclick="hiThere()" style="margin-left: 50%;">
+        Click me event
+    </button>
+    <br>
+    <button type="button" class="button" id="red" onclick="changeColor()">
+        Click to change
+    </button>
+
+    <!-- creating a div containing buttons and then applying dom selector ie. query selector or className or id then apply forEach() or loop to iterate over each element and then apply some css properties when mouse is clicked using eventlistener -->
+    <div class="button-container">
+        <button type="button" class="btn" id="blue">
+            submit
+        </button>
+        <button type="button" class="btn" id="black">
+            Join Me
+        </button>
+        <button type="button" class="btn" id="green">Get to Know Us Better</button>
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
